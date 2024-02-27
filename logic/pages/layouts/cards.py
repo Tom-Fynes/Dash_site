@@ -29,7 +29,20 @@ class Cards:
 
         card = dbc.Card(
         [
-        dbc.CardImg(src="data:image/png;base64,{}".format(encoded_image.decode()), top=True),
+        dbc.CardImg(
+            src="data:image/png;base64,{}".format(encoded_image.decode()), 
+            top=True, 
+            class_name="img-fluid",
+            style= {
+                "width":"15%", 
+                "height=":"15%", 
+                "display": "block", 
+                "margin-left": "auto", 
+                "margin-right": "auto", 
+                "top":"10px",
+                "position": "relative"
+                },
+            ),
         dbc.CardBody(
             [
                 html.H4(card_details.get("title"), className="card-title"),
