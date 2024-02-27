@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "dash-demo"
+version = "0.1.0"
+description = ""
+authors = ["Tom Fynes <thomas.fynes@jet2.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+dash = "^2.15.0"
+pandas = "^2.2.1"
+dash-mantine-components = "^0.12.1"
+dash-bootstrap-components = "^1.5.0"
+more-itertools = "^10.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
