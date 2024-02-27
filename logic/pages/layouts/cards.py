@@ -29,11 +29,11 @@ class Cards:
                 html.H4(card_details.get("title"), className="card-title"),
                 html.P(
                     card_details.get("body"),
-                    className="card-text align-items-stretch flex-fill",
+                    className="align-items-stretch col-md-10",
                 )
                     ]
                 ),
             ],
-            style={"width": "18rem"},
+            style={"width": "25rem", "min-height": "18rem"},
         )
         return card
