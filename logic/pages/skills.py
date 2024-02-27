@@ -24,7 +24,7 @@ def get_skill_layout(sections: list):
     return results
 
 layout = html.Div([
-    html.H1('skills'),
+    html.H1('skills', style={"text-align":"center", "padding":"10px"}),
     html.Div(
     get_skill_layout(sections)
     )
