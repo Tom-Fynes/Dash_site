@@ -1,5 +1,5 @@
 import dash
-from dash import Dash, html, dcc
+from dash import Dash, html
 import dash_bootstrap_components as dbc
 
 app = Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.QUARTZ])
@@ -10,7 +10,7 @@ navbar = dbc.NavbarSimple(
         dbc.DropdownMenu(
             children=[
                 dbc.DropdownMenuItem(f"{page['name']}", href=page["relative_path"])
-                for page in dash.page_registry.values()
+                for page in dash.page_registry.values() if page['name'] in ["Home", "Blog", "Projects", "Skills"]
             ],
             nav=True,
             in_navbar=True,
@@ -18,15 +18,11 @@ navbar = dbc.NavbarSimple(
         ),
     ],
     brand="Dash Site",
-    brand_href="#",
     color="primary",
     dark=True,
 )
 
-
-app.layout =  html.Div([ navbar,
-    dash.page_container
-])
+app.layout =  html.Div([ navbar,dash.page_container])
 
 if __name__ == '__main__':
     app.run(debug=True)
