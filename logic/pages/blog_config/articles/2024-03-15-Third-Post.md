@@ -3,8 +3,8 @@ permalink: /blog/third_post
 title: "Third Post"
 author: "Tom Fynes"
 tab_title: "Third Post"
-description: "Setting up the new blo"
-image: /assets/images/aws.png
+description: "Setting up the new blog"
+image: logic/pages//assets/images/aws.png
 date: 2022-04-01
 ---
 

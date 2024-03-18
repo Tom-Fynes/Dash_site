@@ -1,6 +1,7 @@
 import dash
 from dash import html, dcc
 import dash_bootstrap_components as dbc
+import base64
 from datetime import date
 import os
 import frontmatter
@@ -15,10 +16,12 @@ date_format = '%B %#d, %G' if platform.system() == 'Windows' else '%B %-d, %G'
 def create_article_card(post):
     '''Create clickable card to navigate to the article'''
     date_str = post.get('date').strftime(date_format)
+    encoded_image = base64.b64encode(open(post.get("image"), 'rb').read())
+
     card = dbc.Card(
         html.A(
             [
-                dbc.CardImg(src=f'{post.get("image")}', top=True),
+                dbc.CardImg(src=f'{"data:image/png;base64,{}".format(encoded_image.decode())}', top=True),
                 dbc.CardBody(
                     [
                         html.H4(

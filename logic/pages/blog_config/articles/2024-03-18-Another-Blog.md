@@ -1,6 +1,6 @@
 ---
-permalink: /blog/first_post
-title: "First Post"
+permalink: /blog/Another_post
+title: "SomeTitle"
 author: "Tom Fynes"
 tab_title: "First Post"
 description: "Setting up the new blog"

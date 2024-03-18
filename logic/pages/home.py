@@ -39,23 +39,19 @@ blog = [
         md=6,
         align='centre',
         style={"width": "25rem", "min-height": "18rem"}
-    ) for item in article_cards[:3]
+    ) for item in article_cards[:4]
 ]
 
 layout = html.Div(
     [  jumbotron,
-        html.H4('Recent Posts', style={"text-align":"center", "padding":"10px"}),
-        dbc.Container(
-                [
+        html.H4('Recent Posts', style={"text-align":"center"}),
+
         dbc.Row(
             blog,
             justify='centre',
-            class_name='g-3'
+            class_name='g-3',
+            style={"text-align": "center","padding":"10px", "margin":"auto", "width":"50%"}
         )
-                ],
-                fluid=True,
-                className="py-3",
-                class_name="center", style={"text-align": "center","padding":"10px"}
-            ),
+
     ]
 )
