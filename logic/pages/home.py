@@ -5,7 +5,7 @@ import dash_bootstrap_components as dbc
 
 from .blog_config.blog import article_cards
 
-dash.register_page(__name__, path='/home')
+dash.register_page(__name__, path='/home',order=1)
 
 encoded_image = base64.b64encode(open("logic/pages/assets/images/profile.jpg", 'rb').read())
 
@@ -33,6 +33,27 @@ jumbotron = html.Div(
     className="p-3", style={"background-color": "transparent", "border": "none", "box-shadow": "none"},
 )
 
+emis_link = html.A("EMIS Group plc", "https://www.emishealth.com/")
+
+about = html.Div([
+    dbc.Container(
+        [
+        html.H3("About Me", style={"text-align": "center"}),
+        html.P("Hi, I'm Tom"),
+        html.A("EMIS Group plc", "https://www.emishealth.com/"),
+        html.P(f"""I am a passionte Software Engineer currently working as a Senior Data Engineer at 
+                {emis_link}. 
+                within their Data and Analytics department, 
+                with a background in data engineering, analytics, and leadership, 
+                I am highly passionate about analytics and the insights 
+                and benefits data driven solutions can bring.""")
+        ],
+        style={"padding":"10px", "margin":"auto", "width":"50%"},),
+    ],
+    className="p-3",
+)
+
+
 blog = [
     dbc.Col(
         item,
@@ -44,14 +65,17 @@ blog = [
 
 layout = html.Div(
     [  jumbotron,
+        dbc.Row(
+            about,
+            justify='centre',
+            class_name='g-3',
+        ),
         html.H4('Recent Posts', style={"text-align":"center"}),
-
         dbc.Row(
             blog,
             justify='centre',
             class_name='g-3',
             style={"text-align": "center","padding":"10px", "margin":"auto", "width":"50%"}
         )
-
     ]
 )

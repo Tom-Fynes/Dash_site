@@ -71,9 +71,10 @@ def create_article_page(post):
                 ],
                 lg=10,
                 xl=8
-            )
+            ),
         ),
-        className='mb-4'
+        className='mb-4',
+        style={"padding":"10px", "margin":"auto", "width":"auto"}
     )
     return layout
 
@@ -113,7 +114,7 @@ for article_name in article_files:
 
 layout = html.Div(
     [
-        html.H2('Blog Posts'),
+        html.H2('Blog Posts', style={"text-align": "center"}),
         dbc.Row(
             [
                 dbc.Col(
@@ -123,7 +124,8 @@ layout = html.Div(
                     style={"width": "25rem", "min-height": "18rem"}
                 ) for c in article_cards
             ],
-            class_name='g-3 my-1'
+            class_name='g-3 my-1',
+            style={"text-align": "center", "margin":"auto", "width":"50%"}
         )
     ]
 )
@@ -134,5 +136,6 @@ dash.register_page(
     path='/blog',
     title='Blog',
     description='This is a simple blog page',
-    layout=layout
+    layout=layout,
+    order=2
 )

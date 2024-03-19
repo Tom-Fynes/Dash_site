@@ -45,7 +45,7 @@ class Cards:
             ),
         dbc.CardBody(
             [
-                html.H4(card_details.get("title"), className="card-title"),
+                html.H4(card_details.get("title"), className="card-title hover-effect"),
                 html.P(
                     card_details.get("body"),
                     className="align-items-stretch col-md-10",

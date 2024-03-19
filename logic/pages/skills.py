@@ -5,7 +5,7 @@ import dash_bootstrap_components as dbc
 
 from .layouts import Cards
 
-dash.register_page(__name__)
+dash.register_page(__name__,order=4)
 
 cards = Cards().generate_card_list()
 sections = list(mit.chunked(cards,3))
